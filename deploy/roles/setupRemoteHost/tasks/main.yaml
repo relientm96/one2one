@@ -1,0 +1,17 @@
+# Series of tasks performed to setup remote host to deploy application
+
+---
+
+- name: Host System pre Updates and Upgrades
+  become: yes
+  apt:
+    upgrade: "yes"
+    update-cache: yes
+    state: latest
+
+# Todo: Add installation steps for docker for ubuntu 18.04
+- name: Docker Installation
+  become: yes
+
+
+

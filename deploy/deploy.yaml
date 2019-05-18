@@ -1,0 +1,15 @@
+# This is a simple Ansible Playbook to deploy application to a remote host
+# -- This setup works currently only for the Ubuntu 18.04 Operating System
+---
+- name: Setup Virtual Instance's Environment for app deployment
+  hosts: server
+  sudo: yes
+  gather_facts: no
+  vars_files:
+     - variables/common.yaml
+     - variables/secure.yaml
+  pre_tasks:
+     - name: Wait for successful connection to remote hosts
+       wait_for_connection:
+  roles:
+     - role: setupRemoteHost

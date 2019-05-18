@@ -1,0 +1,6 @@
+# Common yaml file to store common variables
+# Adjust the following parameters
+# -- pathToPrivateKey: path to your SSH private key
+
+pathToPrivateKey: ""
+
