@@ -1,3 +1,5 @@
+/*---Module Exports---*/
+
 //Node Packages
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -12,14 +14,15 @@ const port = 5000;
 //CouchDB variables
 const users = nano.db.use('site_users');
 
-// Middleware 
+/*----Middleware----*/
 
-//Cors configuration
+//For Cors 
 app.use(cors());
+//For Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-//Routes
+/*----Routes----*/
 
 app.get('/api/customers', (req,res) => {
     res.contentType('application/json');
@@ -32,19 +35,11 @@ app.get('/api/customers', (req,res) => {
 
 app.get('/api/users', (req,res) => {
     res.contentType('application/json');
-    users.view('getUsers', 'get_User_Info',{include_docs: true}).then((body) => {
-        body.rows.forEach((doc) => {
-          //res.send(doc.value);
-          console.log(doc.value);
-        });
-        res.send(body);
-      });
-    /*
-    nano.db.get('site_users').then((body) => {
+    users.view('getUsers', 'get_User_Info').then((body) => {
         res.send(body);
     });
-    */
 })
 
+app.get('/api/users/')
 
 app.listen(port, () => console.log(`Server Started on Port ${port}`));
