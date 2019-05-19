@@ -6,15 +6,15 @@ class Customers extends Component {
     constructor(){
         super();
         this.state = {
-            customers: []
+            users: []
         }
     }
 
     componentDidMount(){
-        fetch('http://localhost:5000/api/customers')
+        fetch('http://localhost:5000/api/users')
             .then(res => res.json())
-            .then(customers => this.setState({customers}, 
-                () => console.log("Customers Fetched...", this.state.customers)))
+            .then(users => this.setState({users}, 
+                () => console.log("Customers Fetched...", this.state.users)))
             .catch(error => {
                 console.log(error);
             }); 
@@ -23,10 +23,10 @@ class Customers extends Component {
     render(){
         return(
             <div id="customers-div">
-                <h2> Customers </h2>
+                <h2> Users </h2>
                 <ul>
-                    {this.state.customers.map(customer => 
-                        <li key={customer.id}> {customer.firstname} {customer.lastname} </li>)}
+                    {this.state.users.map(user => 
+                        <li key={user.id}> {user.value.name} {user.value.email} </li>)}
                 </ul>
             </div>
         );
