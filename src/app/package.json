@@ -8,7 +8,8 @@
     "start": "node app.js",
     "server": "nodemon app.js",
     "client": "cd one2onewebsite && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start_all": "concurrently \"npm run start\" \"npm run client\""
   },
   "repository": {
     "type": "git",

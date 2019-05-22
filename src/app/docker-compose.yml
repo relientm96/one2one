@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  client:
+    container_name: react_frontend
+    restart: always
+    build: ./one2onewebsite 
+    ports:
+      - '3000:3000' 
+    links: 
+      - api
+
+  api: 
+    container_name: express_backend
+    restart: always
+    build: .
+    ports:
+      - '5000:5000' 
+    links: 
+      - couch
+
+  couch:
+    container_name: couch
+    image: "couchdb:2.3.0"
+    restart: always
+    ports:
+      - "5984:5984"
+    environment:
+      - COUCHDB_USER=SinsOnTwitter
+      - COUCHDB_PASSWORD=group68
