@@ -15,7 +15,7 @@ RUN npm install
 EXPOSE 5000
 
 #Run both the server and the client together 
-CMD ["npm", "start"]
+CMD ["npm", "start_all"]
 
 
 
