@@ -9,7 +9,7 @@ const nano = require("nano")("http://SinsOnTwitter:group68@localhost:5984");
 
 //Express Variables
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 //CouchDB variables
 const users = nano.db.use("site_users");
