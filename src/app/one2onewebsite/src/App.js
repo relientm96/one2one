@@ -3,15 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 import Customers from './components/customers/customers'
-import Chart from './components/chart/chart'
+import Dashboard from './components/dashboard/dashboard';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Chart/>
-        <Customers/>
+        <Dashboard/>
       </header>
     </div>
   );
