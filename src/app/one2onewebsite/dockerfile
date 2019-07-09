@@ -14,7 +14,7 @@ RUN npm install
 
 EXPOSE 3000
 
-#Run both the server and the client together 
+#Run both the react client
 CMD ["npm", "start"]
 
 
