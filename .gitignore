@@ -1,2 +1,4 @@
 *.pem
-/node_module
+/node_modules
+/src/app/node_modules
+/src/app/one2onewebsite/node_modules
