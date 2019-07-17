@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 
-import Customers from './components/customers/customers'
+import Button from '@material-ui/core/Button';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Customers/>
-      </header>
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
     </div>
   );
 }
