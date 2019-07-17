@@ -1,4 +1,4 @@
 *.pem
-/src/app/node_modules
-/src/app/one2onewebsite/node_modules
-/src/app/.vscode
+/src/node_modules
+/src/one2onewebsite/node_modules
+/src/.vscode
